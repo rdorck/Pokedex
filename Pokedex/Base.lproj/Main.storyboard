@@ -5,6 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="pokemonFont.ttf">
+            <string>PokemonSolidNormal</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -77,9 +82,40 @@
                             </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7X4-Rq-2Mg">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="65"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh8-f2-Fab">
+                                        <rect key="frame" x="557" y="22" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="ZDM-eJ-MSj"/>
+                                            <constraint firstAttribute="width" constant="35" id="wP2-Tg-6Xr"/>
+                                        </constraints>
+                                        <state key="normal" image="music"/>
+                                        <connections>
+                                            <action selector="musicButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Jv-pl-InZ"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PokeDex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9R7-ij-6xA">
+                                        <rect key="frame" x="233" y="8" width="135" height="49"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="135" id="4si-MF-rZe"/>
+                                            <constraint firstAttribute="height" constant="49" id="d8w-BE-jIQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="PokemonSolidNormal" family="Pokemon Solid" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.34509803921568627" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gh8-f2-Fab" secondAttribute="trailing" constant="8" id="1dr-Eu-ecK"/>
+                                    <constraint firstItem="9R7-ij-6xA" firstAttribute="centerY" secondItem="7X4-Rq-2Mg" secondAttribute="centerY" id="ARo-Iq-BV0"/>
+                                    <constraint firstAttribute="trailing" secondItem="gh8-f2-Fab" secondAttribute="trailing" constant="8" id="CB9-By-W2j"/>
+                                    <constraint firstItem="gh8-f2-Fab" firstAttribute="top" secondItem="7X4-Rq-2Mg" secondAttribute="top" constant="22" id="UtU-QT-rqz"/>
+                                    <constraint firstAttribute="bottom" secondItem="gh8-f2-Fab" secondAttribute="bottom" constant="8" id="ndk-Y3-vG0"/>
                                     <constraint firstAttribute="height" constant="65" id="r9E-PM-7UQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="gh8-f2-Fab" secondAttribute="bottom" constant="8" id="sej-a0-t3n"/>
+                                    <constraint firstItem="9R7-ij-6xA" firstAttribute="centerX" secondItem="7X4-Rq-2Mg" secondAttribute="centerX" id="t95-ej-KVv"/>
+                                    <constraint firstItem="gh8-f2-Fab" firstAttribute="top" secondItem="7X4-Rq-2Mg" secondAttribute="top" constant="22" id="vON-aI-fCV"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -109,6 +145,7 @@
                     </view>
                     <connections>
                         <outlet property="collection" destination="y0F-iP-BRt" id="fCb-Fp-err"/>
+                        <outlet property="searchBar" destination="FGf-g5-CND" id="tNF-oe-hdd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -118,5 +155,6 @@
     </scenes>
     <resources>
         <image name="bg" width="960" height="600"/>
+        <image name="music" width="100" height="100"/>
     </resources>
 </document>
